@@ -47,6 +47,11 @@ const GlobalStyles = () => (
         font-family: var(--font-family);
         min-height: 100vh !important;
       }
+
+      button {
+        color: inherit;
+        font: inherit;
+      }
     `}
   />
 );
