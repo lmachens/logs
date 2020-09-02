@@ -1,6 +1,7 @@
 import React from "react";
 
 import LogsTable from "./LogsTable";
+import LogsTableRow from "../LogsTableRow";
 
 export default {
   title: "LogsTable",
@@ -46,12 +47,5 @@ const logs = [
 ];
 export const Full = Template.bind({});
 Full.args = {
-  children: logs.map((log) => (
-    <tr key={log.id}>
-      <td>{log.origin}</td>
-      <td>{log.createdAt}</td>
-      <td>{log.level}</td>
-      <td>{log.message}</td>
-    </tr>
-  )),
+  children: logs.map((log) => <LogsTableRow key={log.id} log={log} />),
 };
