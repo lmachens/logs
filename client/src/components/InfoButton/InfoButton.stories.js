@@ -13,3 +13,9 @@ export const Info = Template.bind({});
 Info.args = {
   children: "Info",
 };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: "Info",
+  disabled: true,
+};

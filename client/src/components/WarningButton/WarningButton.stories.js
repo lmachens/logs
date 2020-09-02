@@ -13,3 +13,9 @@ export const Warning = Template.bind({});
 Warning.args = {
   children: "Warning",
 };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: "Warning",
+  disabled: true,
+};

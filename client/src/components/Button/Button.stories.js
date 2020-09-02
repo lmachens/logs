@@ -13,3 +13,9 @@ export const Default = Template.bind({});
 Default.args = {
   children: "Default",
 };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: "Default",
+  disabled: true,
+};

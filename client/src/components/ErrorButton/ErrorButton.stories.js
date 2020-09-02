@@ -13,3 +13,9 @@ export const Error = Template.bind({});
 Error.args = {
   children: "Error",
 };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: "Error",
+  disabled: true,
+};
