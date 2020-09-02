@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const { connectDB } = require("./lib/db");
+const logsRouter = require("./lib/logsRouter");
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -13,6 +14,8 @@ app.use(
   "/storybook",
   express.static(path.join(__dirname, "client/storybook-static"))
 );
+
+app.use("/api/logs", logsRouter);
 
 // Handle React routing, return all requests to React app
 app.get("*", (req, res) => {
