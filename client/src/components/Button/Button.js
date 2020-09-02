@@ -5,10 +5,8 @@ const Button = styled.button`
   border-radius: 15px;
   background: none;
   padding: 0.3rem 0.6rem;
-
-  &:disabled {
-    color: var(--disabled-color);
-  }
+  color: ${(props) =>
+    props.inactive ? "var(--disabled-color) !important" : "inherit"};
 `;
 
 export default Button;

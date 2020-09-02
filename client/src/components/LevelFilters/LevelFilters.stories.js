@@ -11,14 +11,10 @@ const Template = (args) => <LevelFilters {...args} />;
 
 export const AllActive = Template.bind({});
 AllActive.args = {
-  error: true,
-  warning: true,
-  info: true,
+  filters: ["error", "warning", "info"],
 };
 
 export const OnlyError = Template.bind({});
 OnlyError.args = {
-  error: true,
-  warning: false,
-  info: false,
+  filters: ["error"],
 };

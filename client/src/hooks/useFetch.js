@@ -1,6 +1,6 @@
 const { useState, useEffect } = require("react");
 
-const useAsync = (asyncFunc) => {
+const useAsync = (asyncFunc, params) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -11,7 +11,7 @@ const useAsync = (asyncFunc) => {
         setLoading(true);
         setError(null);
         setData(null);
-        const newData = await asyncFunc();
+        const newData = await asyncFunc(params);
         setData(newData);
       } catch (error) {
         setError(error);
@@ -21,7 +21,7 @@ const useAsync = (asyncFunc) => {
     };
 
     doCall();
-  }, [asyncFunc]);
+  }, [asyncFunc, params]);
 
   return { data, loading, error };
 };

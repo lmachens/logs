@@ -11,20 +11,44 @@ const Container = styled.div`
   }
 `;
 
-const LevelFilters = ({ error, warning, info }) => {
+const LevelFilters = ({ filters = [], onChange }) => {
+  const handleChange = (name) => () => {
+    const oldFilters = [...filters];
+    const index = oldFilters.indexOf(name);
+    if (index > -1) {
+      oldFilters.splice(index, 1);
+      onChange(oldFilters);
+    } else {
+      onChange([...oldFilters, name]);
+    }
+  };
   return (
     <Container>
-      <ErrorButton disabled={!error}>Error</ErrorButton>
-      <WarningButton disabled={!warning}>Warning</WarningButton>
-      <InfoButton disabled={!info}>Info</InfoButton>
+      <ErrorButton
+        onClick={handleChange("error")}
+        inactive={!filters.includes("error")}
+      >
+        Error
+      </ErrorButton>
+      <WarningButton
+        onClick={handleChange("warning")}
+        inactive={!filters.includes("warning")}
+      >
+        Warning
+      </WarningButton>
+      <InfoButton
+        onClick={handleChange("info")}
+        inactive={!filters.includes("info")}
+      >
+        Info
+      </InfoButton>
     </Container>
   );
 };
 
 LevelFilters.propTypes = {
-  error: PropTypes.bool,
-  warning: PropTypes.bool,
-  info: PropTypes.bool,
+  filters: PropTypes.array,
+  onChange: PropTypes.func,
 };
 
 export default LevelFilters;
