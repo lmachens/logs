@@ -12,7 +12,11 @@ const Template = (args) => <LogsTable {...args} />;
 
 export const Empty = Template.bind({});
 Empty.args = {
-  children: <div>No logs available</div>,
+  children: (
+    <tr>
+      <td colSpan={3}>No logs available</td>
+    </tr>
+  ),
 };
 
 const logs = [
