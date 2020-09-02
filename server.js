@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const jsonServer = require("json-server");
+const { connectDB } = require("./lib/db");
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -29,6 +30,12 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
-app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
-});
+const run = async () => {
+  await connectDB();
+  console.log("Database connected");
+  app.listen(port, () => {
+    console.log(`Server listening at http://localhost:${port}`);
+  });
+};
+
+run();
