@@ -1,11 +1,15 @@
+require("dotenv").config();
+
 const express = require("express");
 const path = require("path");
-const jsonServer = require("json-server");
+const { connectDB } = require("./lib/db");
+const logsRouter = require("./lib/logsRouter");
+const bodyParser = require("body-parser");
 
 const app = express();
 const port = process.env.PORT || 3001;
-const router = jsonServer.router("db.json");
-const middlewares = jsonServer.defaults();
+
+app.use(bodyParser.json());
 
 // Serve any static files
 app.use(express.static(path.join(__dirname, "client/build")));
@@ -14,19 +18,19 @@ app.use(
   express.static(path.join(__dirname, "client/storybook-static"))
 );
 
-app.use(
-  jsonServer.rewriter({
-    "/api/*": "/$1",
-  })
-);
-app.use(router);
-app.use(middlewares);
+app.use("/api/logs", logsRouter);
 
 // Handle React routing, return all requests to React app
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
-app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
-});
+const run = async () => {
+  await connectDB();
+  console.log("Database connected");
+  app.listen(port, () => {
+    console.log(`Server listening at http://localhost:${port}`);
+  });
+};
+
+run();
