@@ -25,6 +25,7 @@ const GlobalStyles = () => (
         --error-color: #d42a2a;
         --warning-color: #c4920a;
         --info-color: #68d42a;
+        --disabled-color: #7a7a7a;
         --bg-color: #000;
         --bg-gradient: linear-gradient(
           140deg,
@@ -46,6 +47,11 @@ const GlobalStyles = () => (
         margin: 0;
         font-family: var(--font-family);
         min-height: 100vh !important;
+      }
+
+      button {
+        color: inherit;
+        font: inherit;
       }
     `}
   />
