@@ -5,10 +5,12 @@ const LogsTable = ({ children }) => {
   return (
     <table>
       <thead>
-        <td>Origin</td>
-        <td>Created At</td>
-        <td>Level</td>
-        <td>Message</td>
+        <tr>
+          <td>Origin</td>
+          <td>Created At</td>
+          <td>Level</td>
+          <td>Message</td>
+        </tr>
       </thead>
       <tbody>{children}</tbody>
     </table>
