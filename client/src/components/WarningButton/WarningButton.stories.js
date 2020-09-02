@@ -17,5 +17,5 @@ Warning.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   children: "Warning",
-  disabled: true,
+  inactive: true,
 };

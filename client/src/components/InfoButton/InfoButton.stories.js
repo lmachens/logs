@@ -17,5 +17,5 @@ Info.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   children: "Info",
-  disabled: true,
+  inactive: true,
 };

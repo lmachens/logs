@@ -17,5 +17,5 @@ Error.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   children: "Error",
-  disabled: true,
+  inactive: true,
 };
