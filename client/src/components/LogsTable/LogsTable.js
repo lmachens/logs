@@ -1,9 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "@emotion/styled";
+
+const Table = styled.table`
+  td {
+    padding: 0.5rem 1rem;
+  }
+`;
 
 const LogsTable = ({ children }) => {
   return (
-    <table>
+    <Table>
       <thead>
         <tr>
           <td>Origin</td>
@@ -13,7 +20,7 @@ const LogsTable = ({ children }) => {
         </tr>
       </thead>
       <tbody>{children}</tbody>
-    </table>
+    </Table>
   );
 };
 
