@@ -37,11 +37,12 @@ const GlobalStyles = () => (
 
       body {
         color: var(--base-color);
-        background: var(--bg-color);
-        background: var(--bg-gradient);
+        background-color: var(--bg-color);
+        background-image: var(--bg-gradient);
         padding: 0;
         margin: 0;
         font-family: var(--font-family);
+        min-height: 100vh !important;
       }
     `}
   />
