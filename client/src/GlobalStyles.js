@@ -22,6 +22,9 @@ const GlobalStyles = () => (
 
       :root {
         --base-color: #f6f6f4;
+        --error-color: #d42a2a;
+        --warning-color: #c4920a;
+        --info-color: #68d42a;
         --bg-color: #000;
         --bg-gradient: linear-gradient(
           140deg,
