@@ -9,7 +9,7 @@ const withGlobalStyles = (Story, context) => {
   return (
     <>
       <GlobalStyles />
-      <Story {...context} />{" "}
+      <Story {...context} />
     </>
   );
 };
