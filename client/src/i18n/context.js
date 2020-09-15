@@ -19,7 +19,10 @@ export const I18nProvider = ({ dictName, children }) => {
   }, [dictName]);
 
   const changeDict = async (dictName) => {
-    const dict = await import(`./${dictName}`);
+    const dict = await fetch(`/${dictName}.json`).then((response) =>
+      response.json()
+    );
+    // const dict = await import(`/${dictName}.json`);
     setDict(dict);
   };
 

@@ -1,0 +1,7 @@
+{
+  "locale": "en",
+  "messages": {
+    "emailPlaceholder": "Email",
+    "login": "Login"
+  }
+}
