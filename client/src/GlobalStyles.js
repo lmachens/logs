@@ -21,6 +21,7 @@ const GlobalStyles = () => (
       }
 
       :root {
+        --active-color: #4fb8fe;
         --base-color: #f6f6f4;
         --error-color: #d42a2a;
         --warning-color: #c4920a;
@@ -37,6 +38,7 @@ const GlobalStyles = () => (
 
       html {
         font-size: 100%;
+        height: 100%;
       }
 
       body {
@@ -46,12 +48,20 @@ const GlobalStyles = () => (
         padding: 0;
         margin: 0;
         font-family: var(--font-family);
-        min-height: 100vh !important;
       }
 
       button {
         color: inherit;
         font: inherit;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+
+        :hover {
+          text-decoration: underline;
+        }
       }
     `}
   />
