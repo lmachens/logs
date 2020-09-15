@@ -23,6 +23,7 @@ const GlobalStyles = () => (
       :root {
         --active-color: #4fb8fe;
         --base-color: #f6f6f4;
+        --secondary-color: #666;
         --error-color: #d42a2a;
         --warning-color: #c4920a;
         --info-color: #68d42a;
@@ -51,7 +52,7 @@ const GlobalStyles = () => (
       }
 
       button {
-        color: inherit;
+        color: var(--secondary-color);
         font: inherit;
       }
 
