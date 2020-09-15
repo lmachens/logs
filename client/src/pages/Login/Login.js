@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { login } from "../../api/auth";
-import { useDict } from "../../i18n/context";
+import { I18n, useDict } from "../../i18n/context";
 
 const Form = styled.form`
   max-width: 400px;
@@ -53,7 +53,9 @@ const Login = () => {
         placeholder={dict.emailPlaceholder}
         autoFocus
       />
-      <button disabled={email.trim().length === 0}>{dict.login}</button>
+      <button disabled={email.trim().length === 0}>
+        <I18n name="login" />
+      </button>
     </Form>
   );
 };

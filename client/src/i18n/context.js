@@ -34,3 +34,8 @@ I18nProvider.propTypes = {
   dictName: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
+
+export const I18n = ({ name }) => {
+  const dict = useDict();
+  return dict[name] || "";
+};
