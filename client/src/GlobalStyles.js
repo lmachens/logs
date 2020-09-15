@@ -37,6 +37,7 @@ const GlobalStyles = () => (
 
       html {
         font-size: 100%;
+        height: 100%;
       }
 
       body {
@@ -46,7 +47,6 @@ const GlobalStyles = () => (
         padding: 0;
         margin: 0;
         font-family: var(--font-family);
-        min-height: 100vh !important;
       }
 
       button {
