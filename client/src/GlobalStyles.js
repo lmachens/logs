@@ -53,6 +53,15 @@ const GlobalStyles = () => (
         color: inherit;
         font: inherit;
       }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+
+        :hover {
+          text-decoration: underline;
+        }
+      }
     `}
   />
 );
