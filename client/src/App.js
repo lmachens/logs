@@ -12,6 +12,7 @@ import useCookie from "./hooks/useCookie";
 import Login from "./pages/Login";
 import styled from "@emotion/styled";
 import Header from "./components/Header";
+import { I18nProvider } from "./i18n/context";
 
 const AppHeader = styled(Header)`
   width: 80%;
@@ -30,24 +31,26 @@ function App() {
   const [authToken] = useCookie("authToken");
 
   return (
-    <Router>
-      <GlobalStyles />
-      <AppHeader loggedIn={Boolean(authToken)} />
-      <Main>
-        <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/apps">
-            <Apps />
-          </Route>
-          <Route path="/">
-            <Logs />
-          </Route>
-        </Switch>
-        {!authToken && <Redirect to="/login" />}
-      </Main>
-    </Router>
+    <I18nProvider dictName={"en"}>
+      <Router>
+        <GlobalStyles />
+        <AppHeader loggedIn={Boolean(authToken)} />
+        <Main>
+          <Switch>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/apps">
+              <Apps />
+            </Route>
+            <Route path="/">
+              <Logs />
+            </Route>
+          </Switch>
+          {!authToken && <Redirect to="/login" />}
+        </Main>
+      </Router>
+    </I18nProvider>
   );
 }
 

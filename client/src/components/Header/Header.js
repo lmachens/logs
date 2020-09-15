@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import logoSrc from "../../assets/logo.png";
 import { Link, useLocation } from "react-router-dom";
+import { useI18n } from "../../i18n/context";
 
 const FlexHeader = styled.header`
   display: flex;
@@ -35,6 +36,7 @@ const NavLink = styled(({ active, ...props }) => <Link {...props} />)`
 
 const Header = ({ loggedIn, ...props }) => {
   const location = useLocation();
+  const [, setDict] = useI18n();
 
   const navItems = loggedIn ? (
     <>
@@ -61,6 +63,8 @@ const Header = ({ loggedIn, ...props }) => {
     <FlexHeader {...props}>
       <img src={logoSrc} alt="Logo" />
       <h1>Logs</h1>
+      <button onClick={() => setDict("en")}>English!!</button>
+      <button onClick={() => setDict("de")}>Deutsch!!</button>
       <nav>
         <ul>{navItems}</ul>
       </nav>
