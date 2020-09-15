@@ -1,4 +1,7 @@
 {
-  "emailPlaceholder": "Email",
-  "login": "Login"
+  "locale": "en",
+  "messages": {
+    "emailPlaceholder": "Email",
+    "login": "Login"
+  }
 }

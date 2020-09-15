@@ -36,7 +36,7 @@ const NavLink = styled(({ active, ...props }) => <Link {...props} />)`
 
 const Header = ({ loggedIn, ...props }) => {
   const location = useLocation();
-  const [, setDict] = useI18n();
+  const [dict, setDict] = useI18n();
 
   const navItems = loggedIn ? (
     <>
@@ -63,8 +63,9 @@ const Header = ({ loggedIn, ...props }) => {
     <FlexHeader {...props}>
       <img src={logoSrc} alt="Logo" />
       <h1>Logs</h1>
-      <button onClick={() => setDict("en")}>English!!</button>
-      <button onClick={() => setDict("de")}>Deutsch!!</button>
+      <button onClick={() => setDict(dict.locale === "en" ? "de" : "en")}>
+        {dict.locale}
+      </button>
       <nav>
         <ul>{navItems}</ul>
       </nav>

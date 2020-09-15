@@ -36,7 +36,7 @@ const Form = styled.form`
 const Login = () => {
   const [email, setEmail] = useState("");
   const history = useHistory();
-  const dict = useDict();
+  const { messages } = useDict();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -50,7 +50,7 @@ const Login = () => {
         type="email"
         value={email}
         onChange={(event) => setEmail(event.target.value)}
-        placeholder={dict.emailPlaceholder}
+        placeholder={messages.emailPlaceholder}
         autoFocus
       />
       <button disabled={email.trim().length === 0}>

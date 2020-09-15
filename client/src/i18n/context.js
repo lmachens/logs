@@ -12,7 +12,7 @@ export const useI18n = () => {
 };
 
 export const I18nProvider = ({ dictName, children }) => {
-  const [dict, setDict] = useState({});
+  const [dict, setDict] = useState({ locale: "", messages: {} });
 
   useEffect(() => {
     changeDict(dictName);
@@ -36,6 +36,6 @@ I18nProvider.propTypes = {
 };
 
 export const I18n = ({ name }) => {
-  const dict = useDict();
-  return dict[name] || "";
+  const { messages } = useDict();
+  return messages[name] || "";
 };
