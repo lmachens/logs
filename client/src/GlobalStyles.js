@@ -21,6 +21,7 @@ const GlobalStyles = () => (
       }
 
       :root {
+        --active-color: #4fb8fe;
         --base-color: #f6f6f4;
         --error-color: #d42a2a;
         --warning-color: #c4920a;
