@@ -14,7 +14,7 @@ const Logs = () => {
       <LevelFilters filters={filters} onChange={setFilters} />
       <LogsTable>
         {logs?.map((log) => (
-          <LogsTableRow key={log.id} log={log} />
+          <LogsTableRow key={log._id} log={log} />
         ))}
       </LogsTable>
       {loading && <div>Loading...</div>}
