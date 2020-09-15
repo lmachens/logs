@@ -1,10 +1,20 @@
 import React from "react";
 import GlobalStyles from "./GlobalStyles";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
 import Apps from "./pages/Apps";
 import Logs from "./pages/Logs";
+import useCookie from "./hooks/useCookie";
+import Login from "./pages/Login";
 
 function App() {
+  const [authToken] = useCookie("authToken");
+
   return (
     <div>
       <GlobalStyles />
@@ -20,6 +30,9 @@ function App() {
           </ul>
         </nav>
         <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
           <Route path="/apps">
             <Apps />
           </Route>
@@ -27,6 +40,7 @@ function App() {
             <Logs />
           </Route>
         </Switch>
+        {!authToken && <Redirect to="/login" />}
       </Router>
     </div>
   );
