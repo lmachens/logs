@@ -36,5 +36,5 @@ export const useDict = () => {
 };
 
 export const useDictMessages = () => {
-  return useI18n()[0].messages;
+  return useDict().messages;
 };
