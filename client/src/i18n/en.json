@@ -1,0 +1,13 @@
+{
+  "locale": "en",
+  "messages": {
+    "login": "Login",
+    "emailPlaceholder": "What's your email?",
+    "loading": "Loading...",
+    "origin": "Origin",
+    "createdAt": "Created At",
+    "level": "Level",
+    "message": "Message",
+    "comingSoon": "Coming soon..."
+  }
+}

@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import logoSrc from "../../assets/logo.png";
 import { Link, useLocation } from "react-router-dom";
+import LanguageSelector from "../LanguageSelector";
 
 const FlexHeader = styled.header`
   display: flex;
@@ -61,6 +62,7 @@ const Header = ({ loggedIn, ...props }) => {
     <FlexHeader {...props}>
       <img src={logoSrc} alt="Logo" />
       <h1>Logs</h1>
+      <LanguageSelector />
       <nav>
         <ul>{navItems}</ul>
       </nav>

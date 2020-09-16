@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
+import { useDictMessages } from "../../i18n/context";
 
 const Table = styled.table`
   td {
@@ -9,14 +10,16 @@ const Table = styled.table`
 `;
 
 const LogsTable = ({ children }) => {
+  const dictMessages = useDictMessages();
+
   return (
     <Table>
       <thead>
         <tr>
-          <td>Origin</td>
-          <td>Created At</td>
-          <td>Level</td>
-          <td>Message</td>
+          <td>{dictMessages.origin}</td>
+          <td>{dictMessages.createdAt}</td>
+          <td>{dictMessages.level}</td>
+          <td>{dictMessages.message}</td>
         </tr>
       </thead>
       <tbody>{children}</tbody>
