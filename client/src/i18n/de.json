@@ -1,0 +1,13 @@
+{
+  "locale": "de",
+  "messages": {
+    "login": "Einloggen",
+    "emailPlaceholder": "Wie ist deine E-Mail?",
+    "loading": "Lade...",
+    "origin": "Quelle",
+    "createdAt": "Erstellt am",
+    "level": "Level",
+    "message": "Nachricht",
+    "comingSoon": "In Entwicklung..."
+  }
+}

@@ -4,10 +4,12 @@ import LogsTableRow from "../../components/LogsTableRow/LogsTableRow";
 import { getLogs } from "../../api/logs";
 import useAsync from "../../hooks/useFetch";
 import LevelFilters from "../../components/LevelFilters";
+import { useDictMessages } from "../../i18n/context";
 
 const Logs = () => {
   const [filters, setFilters] = useState(["error", "warning", "info"]);
   const { data: logs, loading } = useAsync(getLogs, filters);
+  const dictMessages = useDictMessages();
 
   return (
     <>
@@ -17,7 +19,7 @@ const Logs = () => {
           <LogsTableRow key={log._id} log={log} />
         ))}
       </LogsTable>
-      {loading && <div>Loading...</div>}
+      {loading && <div>{dictMessages.loading}</div>}
     </>
   );
 };
